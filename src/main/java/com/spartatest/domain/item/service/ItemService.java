@@ -38,9 +38,10 @@ public class ItemService {
 
     @Transactional
     public void delete(Long id) {
-        if (itemRepository.existsById(id)) {
-            itemRepository.deleteById(id);
+        if (!itemRepository.existsById(id)) {
+            throw new NoSuchElementException("Can't find item with id " + id);
         }
+        itemRepository.deleteById(id);
     }
 
     public Item findById(Long id) {
