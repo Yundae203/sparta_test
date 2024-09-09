@@ -1,6 +1,7 @@
 package com.spartatest.domain.item.controller;
 
 import com.spartatest.domain.item.dto.ItemRequest;
+import com.spartatest.domain.item.dto.ItemResNoContent;
 import com.spartatest.domain.item.dto.ItemResponse;
 import com.spartatest.common.dto.MessageResponse;
 import com.spartatest.domain.item.service.ItemService;
@@ -17,7 +18,7 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping
-    public List<ItemResponse> findAll() {
+    public List<ItemResNoContent> findAll() {
         return itemService.findAll();
     }
 

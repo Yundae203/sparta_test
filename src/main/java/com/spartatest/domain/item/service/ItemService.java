@@ -1,5 +1,6 @@
 package com.spartatest.domain.item.service;
 
+import com.spartatest.domain.item.dto.ItemResNoContent;
 import com.spartatest.domain.item.dto.ItemResponse;
 import com.spartatest.domain.item.entity.Item;
 import com.spartatest.domain.item.dto.ItemRequest;
@@ -24,8 +25,8 @@ public class ItemService {
         return ItemResponse.fromItem(item);
     }
 
-    public List<ItemResponse> findAll() {
-        return itemRepository.findAll().stream().map(ItemResponse::fromItem).toList();
+    public List<ItemResNoContent> findAll() {
+        return itemRepository.findAll().stream().map(ItemResNoContent::fromItem).toList();
     }
 
     @Transactional
